@@ -1,0 +1,65 @@
+@use 'helpers/variables' as v;
+
+@mixin phone {
+    @media (min-width: v.$mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin grid ($columns, $spacing) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $spacing;
+}
+
+@mixin reset-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin contenedor {
+    width: min(95%, 130rem);
+    margin: 0 auto;
+}
+
+@mixin contenedor-md {
+    width: min(95%, 80rem);
+    margin: 0 auto;
+}
+
+@mixin contenedor-sm {
+    width: min(95%, 60rem);
+    margin: 0 auto;
+}
+
+@mixin title {
+    font-family: v.$fontHeader;
+    font-weight: 400;
+    color: v.$accent;
+    font-size: 3.2rem;
+    line-height: 3.7rem;
+    text-transform: capitalize;
+    letter-spacing: 0.3em;
+}
+
+@mixin line ($width,$margin){
+    content: " ";
+    display: inline-block;
+    border: 1px solid v.$accent;
+    width: $width;
+    margin: $margin;
+    margin-bottom: 0.7rem;
+}
